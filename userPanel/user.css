@@ -1,0 +1,218 @@
+:root {
+  --body-font-family: "Montserrat", sans-serif;
+  --title-font-family: "Sono", sans-serif;
+
+  --primary-bg-color: #0066cc;
+  --secoundary-bg-color: #f0f8ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--title-font-family);
+}
+
+body {
+  background-color: var(--primary-bg-color);
+}
+
+.navigation {
+  position: fixed;
+  inset: 20px 0 20px 16px;
+  width: 75px;
+  background: var(--secoundary-bg-color);
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* for movement */
+
+.navigation.open {
+  width: 250px;
+}
+
+/* END */
+
+.navigation .menuToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 23px;
+}
+
+.navigation img {
+  position: absolute;
+  top: 8%;
+  width: 30%;
+  border: solid #0066cc;
+}
+
+.navigation .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #333;
+  transform: translateY(-8px);
+  transition: 0.5s;
+}
+
+/* toggle effect while opening */
+.navigation.open .menuToggle::before {
+  transform: translateY(0px) rotate(45deg);
+}
+/* end */
+
+.navigation .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #333;
+  transform: translateY(8px);
+  transition: 0.5s;
+  box-shadow: 0 -8px 0 #333;
+}
+
+/* toggle effect while closing */
+.navigation.open .menuToggle::after {
+  transform: translateY(0px) rotate(-45deg);
+  box-shadow: 0 0 0 #333;
+}
+/* end */
+
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+}
+
+.navigation ul li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 30px 0;
+  transition: 0.5s;
+}
+
+.navigation ul li.active {
+  transform: translateX(30px);
+}
+
+.navigation.open ul li.active {
+  transform: translateX(10px);
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* top: 10px; */
+  justify-content: flex-start;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* logout button code */
+
+.navigation ul li button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 20px;
+  justify-content: flex-start;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navigation ul li button .icon {
+  position: relative;
+  display: block;
+  min-width: 55px;
+  right: 20px;
+  height: 55px;
+  line-height: 60px;
+  transition: 0.5s;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 55px;
+  right: 20px;
+  height: 55px;
+  line-height: 60px;
+  transition: 0.5s;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.navigation ul li.active a .icon {
+  color: #fff;
+  background: var(--clr);
+  right: 15px;
+}
+
+.navigation ul li a .icon::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  filter: blur(8px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.navigation ul li.active a .icon::before {
+  opacity: 0.3;
+}
+
+.navigation ul li a .text {
+  position: relative;
+  padding: 0 8px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.navigation.open ul li a .text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation ul li.active a .text {
+  color: var(--clr);
+}
+
+/* Responsive code */
+
+@media (max-width: 700px) {
+  .navigation {
+    grid-template-columns: minmax(100px, 1fr);
+  }
+}
+
+/* end */

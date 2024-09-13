@@ -1,0 +1,308 @@
+   <!-- wellcome message code and logout button -->
+        <?php
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+            echo "<div class='user'>$_SESSION[user_name]  <a href=' ../conFile/logout.php' style=' background-color: white; box-sizing: border-box;padding:
+       10px 20px 10px 20px; border-radius: .9rem;'>Logout</a></div>";
+
+        } else {
+            header('Location: ../index.php');
+            ;
+        } 
+
+
+
+        ?>
+
+        <!-- end -->
+
+
+
+            <!-- session code with wellcome msg -->
+    <?php
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+        echo "<h1 style='text-align:center; padding-top: 200px;'> Welcome to the website - $_SESSION[user_name]</h1>";
+    }
+    ?>
+        <!-- session code end -->
+
+
+        
+        footer view pages:
+
+           <div class="col-lg-7 col-md-9 col-12">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Homepage</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Browse episodes</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Help Center</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+        contacts:
+                       <div class="col-lg-3 col-md-6 col-12 mb-4 mb-md-0 mb-lg-0">
+                        <h6 class="site-footer-title mb-3">Contact</h6>
+
+                        <p class="mb-2"><strong class="d-inline me-2">Phone:</strong> 0</p>
+
+                        <p>
+                            <strong class="d-inline me-2">Email:</strong>
+                            <a href="#">lva@info.co</a> 
+                        </p>
+                    </div>
+
+
+
+
+
+                    search bar code
+
+                      <!-- <form action="#" method="get" class="custom-form search-form flex-fill me-3" role="search">
+                            <div class="input-group input-group-lg">    
+                                <input name="search" type="search" class="form-control" id="search" placeholder="Search Podcast" aria-label="Search">
+
+                                <button type="submit" class="form-control" id="submit">
+                                    <i class="bi-search"></i>
+                                </button>
+                            </div>
+                        </form> -->
+                    search bar code end
+                
+
+<!--Top nav bar -->
+<div class="top-header1">
+    <div class="container">
+
+        <ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s">
+
+            <li class="sig"><a href="#" data-toggle="modal" data-target="#myModal">Sign Up</a></li>
+            <li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4">/ Sign In</a></li>
+            <!-- Conditionally show login/logout -->
+            <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true): ?>
+                <li><a href="logout.php">Logout</a></li>
+            <?php else: ?>
+                <li><a href="login.php">Login</a></li>
+            <?php endif; ?>
+        </ul>
+
+    </div>
+</div>
+<!--Top nav bar code end-->
+
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand me-lg-5 me-0" href="index.php">
+            <img src="images/lva-logo2.png" class="logo-image img-fluid">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.php">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.php">About</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Watch</a>
+
+                    <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                        <li><a class="dropdown-item" href="upcoming-streams.php">Upcoming Streams</a></li>
+
+                        <li><a class="dropdown-item" href="recorded-streams.php">recorded Streams</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="package-list.php">Events</a>
+
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.php">Contact</a>
+                </li>
+            </ul>
+
+            <div class="ms-4">
+                <a href="#section_3" class="btn custom-btn custom-border-btn smoothscroll">Get started</a>
+            </div>
+
+            <button class="btnLogin-popup">Login</button>
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+navcode check
+
+
+<div class="top-header1">
+    <div class="container">
+
+        <ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s">
+
+            <li class="sig"><a href="#" data-toggle="modal" data-target="#myModal">
+            <li><a> <button class="btnLogin-popup">Login</button></a></li>
+            </a></li>
+            <!-- Conditionally show login/logout -->
+            <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true): ?>
+                <li><a href="logout.php">Logout</a></li>
+            <?php else: ?>
+                <!-- <li><a> <button class="btnLogin-popup">Login</button></a></li> -->
+
+            <?php endif; ?>
+        </ul>
+
+    </div>
+</div>
+
+
+end
+
+
+
+            // $sql = "SELECT * FROM user_reg WHERE user_email='$useremail'";
+            // $result = mysqli_query($conn, $sql);
+        
+            // if (!$result) {
+            //     $msg = "Error fetching user data: " . mysqli_error($conn);
+            //     error_log("SQL Error: " . mysqli_error($conn));
+            // } else {
+            //     if (mysqli_num_rows($result) > 0) {
+            //         $row = mysqli_fetch_assoc($result);
+
+
+
+
+
+            <!-- login-registerforms -->
+<div class="wrapper">
+
+            <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="" method="POST">
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" name="user_email" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="Password" name="user_pass" required>
+                        <label>Password</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Remember me</label>
+                        <a href="#">Forgot Password</a>
+                    </div>
+                    <button type="submit" name="logsubmit" class="btnn">Login</button>
+
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <!-- Register  -->
+
+
+
+            <div class="form-box register">
+                <h2>Register</h2>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" name="user_name" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" name="user_email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="Password" name="user_pass" required>
+                        <label>Password</label>
+                    </div>
+
+                    <div class="input-box">
+                        <br>
+                        <input type="file" name="user_image">
+                        <label>Profile Picture</label>
+                    </div>
+
+
+                    <button type="submit" class="btnn" name="submit">Register</button>
+
+                    <div class="login-register">
+                        <p> Have an account? <a href="#" class="login-link">Login</a></p>
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+
+<!-- login-registerforms end -->
+
+
+
+filter code
+
+                <!-- filter code -->
+                <!-- <div class="row-fltrbtn">
+            <div class="col-btn">
+                <button type="button" class="filter-button btn-fltr btn--blue" data-category="all"> Show
+                    All</button>
+            </div>
+
+            <div class="col-btn">
+                <button type="button" class="filter-button btn-fltr btn--blue" data-category="fruit">Education</button>
+            </div>
+
+            <div class="col-btn">
+                <button type="button" class="filter-button btn-fltr btn--blue"
+                    data-category="vegetable">Productivity</button>
+            </div>
+
+            <div class="col-btn form">
+                <input class="searchtab" type="text" autocomplete="off" placeholder="Search here.." id="searchBar">
+            </div>
+
+        </div> -->
+
+                <!-- filter code end -->
